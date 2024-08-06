@@ -1,25 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
     const taskInput = document.querySelector('.task-input');
-    const addTaskButton = document.querySelector('.add-task-button');
-    const taskContainer = document.querySelector('.tasks');
-    const deleteTaskButton = document.querySelector('delete-task-button');
+    const addTaskBtn = document.querySelector('.add-task-button');
+    const tasksContainer = document.querySelector('.tasks');
 
-    addTaskButton.addEventListener('click', () => {
+    addTaskBtn.addEventListener('click', () => {
         const taskText = taskInput.value.trim();
-
-        if (taskText != '') {
+        if (taskText !== '') {
             const task = document.createElement('div');
             task.classList.add('task');
-            task.textContent = taskText;
 
-            task.addEventListener('click', () => {
-                taskContainer.removeChild(task);
+            const taskContent = document.createElement('span');
+            taskContent.textContent = taskText;
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.classList.add('delete-task-button');
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.addEventListener('click', () => {
+                tasksContainer.removeChild(task);
             });
 
-            taskContainer.appendChild(task);
+            task.appendChild(taskContent);
+            task.appendChild(deleteBtn);
+            tasksContainer.appendChild(task);
+
             taskInput.value = '';
             taskInput.focus();
         }
-        console.log(taskContainer);
-    })
-})
+    });
+});
