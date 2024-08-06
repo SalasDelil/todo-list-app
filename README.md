@@ -8,6 +8,11 @@ This is a simple Todo List application built with HTML, CSS, and JavaScript.
 - Edit tasks by clicking the edit button
 - Remove tasks by clicking the delete button
 
+## Screenshots
+
+![Todo List Application Screenshot](screenshots/Screenshot01.png)
+![Todo List Application Screenshot](screenshots/Screenshot02.png)
+
 ## Instructions for Running
 
 1. Clone the repository or download the project files.
